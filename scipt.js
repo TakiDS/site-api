@@ -7,7 +7,7 @@ document.addEventListener("DOMContentLoaded", function(){
         let item = document.querySelector(".cart-view");
         item.insertAdjacentHTML('beforeend', `<div class="item_carrinho">
                     <img src="${imglink}" alt="teste_img">
-                    <button> <span><img src="assents/adicionar-ao-carrinho.png" alt="cart-img"></span>Add cart</button>
+                    <button> <span><img class='imagem' src="assents/adicionar-ao-carrinho.png" alt="cart-img"></span>Add cart</button>
                     <small>${data[9].category}</small>
                     <p>${data[9].title}</p>
                     <span>

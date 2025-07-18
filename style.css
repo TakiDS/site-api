@@ -67,3 +67,9 @@ body{
     background-color: white;
     padding: 10px;
 }
+
+.imagem{
+    width: 150px;
+    height: 150px;
+    object-fit: cover;
+}
