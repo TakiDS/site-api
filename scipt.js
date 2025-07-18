@@ -5,16 +5,22 @@ document.addEventListener("DOMContentLoaded", function(){
         const imglink = data[9].image
         console.log(data)
         let item = document.querySelector(".cart-view");
-        item.insertAdjacentHTML('beforeend', `<div class="item_carrinho">
-                    <img src="${imglink}" alt="teste_img">
-                    <button> <span><img src="assents/adicionar-ao-carrinho.png" alt="cart-img"></span>Add cart</button>
-                    <small>${data[9].category}</small>
-                    <p>${data[9].title}</p>
+        for(i=0;i<10;i++){
+            item.insertAdjacentHTML('beforeend', `<div class="item_carrinho">
+                    <img src="${data[i].image}" alt="teste_img">
+                    <button id="idBtn-${i}> <span><img src="assents/adicionar-ao-carrinho.png" alt="cart-img"></span>Add cart</button>
+                    <small>${data[i].category}</small>
+                    <p>${data[i].title}</p>
                     <span>
-                        <p>$ ${data[9].price}</p>
+                        <p>$ ${data[i].price}</p>
                     </span>
                 </div>` );
+        }
+        
     });
+
+    let clicou = document.getElementById('idBtn-3')
+    
     
     
 })
