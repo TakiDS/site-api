@@ -1,41 +1,193 @@
-body{
-    background-color: whitesmoke;
-    
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
 }
+
+body {
+  background-color: whitesmoke;
+  font-family: 'Segoe UI', sans-serif;
+  padding: 10px;
+}
+
+
+.container {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 20px;
+  padding-top: 50px;
+}
+
+.left-side,
+.rigth-side {
+  flex: 1;
+  min-width: 300px;
+}
+
+.left-side {
+  background-color: aliceblue;
+  border-radius: 20px;
+  padding: 20px;
+}
+
+.rigth-side {
+  padding: 20px;
+}
+
+
+.cart-view {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+}
+
+.item_carrinho {
+  display: flex;
+  flex-direction: column;
+  width: 200px;
+}
+
+.item_carrinho img {
+  border-radius: 5px;
+  height: 250px;
+  object-fit: cover;
+}
+
+.item_carrinho button {
+  border-radius: 20px;
+  margin-top: -10px;
+  width: 120px;
+  align-self: center;
+  padding: 5px;
+  background-color: rgb(192, 81, 81);
+  color: white;
+  border: none;
+  cursor: pointer;
+}
+
+.item_carrinho button img {
+  height: 20px;
+  margin: 3px;
+}
+
+.item_carrinho small {
+  color: #B4AAA7;
+}
+
+.item_carrinho p {
+  color: #372623;
+}
+
+.item_carrinho span p {
+  color: #B06F5D;
+}
+
+/* 🛒 Carrinho de compras */
+.carrinho {
+  width: 100%;
+  min-height: 200px;
+  border-radius: 10px;
+  background-color: aliceblue;
+  padding: 20px;
+}
+
+.itens .item {
+  display: flex;
+  justify-content: space-between;
+  border-bottom: solid rgba(128, 128, 128, 0.1);
+  padding: 10px 0;
+}
+
+.item .btnDel {
+  background-color: transparent;
+  border: none;
+  font-size: 1.5rem;
+  color: #dc3545;
+  cursor: pointer;
+  margin-left: 1rem;
+  line-height: 1;
+  transition: color 0.2s ease;
+}
+
+.item .btnDel:hover {
+  color: #a71d2a;
+}
+
+.item .nomeProduto,
+.item .qtdProd {
+  color: red;
+}
+
+.item .precoUni {
+  color: #6e6e6e;
+}
+
+.item .precoSom {
+  color: brown;
+}
+
+.finalCar {
+  display: flex;
+  justify-content: space-between;
+  margin-top: 10px;
+}
+
+.finalCar p {
+  margin-top: 5px;
+}
+
+.finalCar h3 {
+  font-weight: 755;
+}
+
+#btnConfirm {
+  background-color: red;
+  border-radius: 20px;
+  padding: 10px;
+  width: 100%;
+  max-width: 320px;
+  color: white;
+  border: none;
+  cursor: pointer;
+  margin-top: 15px;
+}
+
+
 dialog {
   border: none;
   border-radius: 8px;
   padding: 2rem;
   box-shadow: 0 5px 20px rgba(0,0,0,0.3);
   max-width: 450px;
-  width: 100%;
+  width: 90%;
+  text-align: center;
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
 
-  & button{
-    display: flex;
-    align-self: center;
-    justify-content: center;
-    justify-self: center;
-    
-    width: 300px;
-    padding: 10px;
-    color:white;
-    background-color: red;
-    border-radius:30px ;
-    border: none;
-  }
 }
 
 dialog::backdrop {
   background: rgba(0, 0, 0, 0.6);
 }
 
-.resumo-img {
-  width: 40px;
-  height: 40px;
-  object-fit: cover;
-  margin-right: 10px;
-  vertical-align: middle;
+dialog button {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin: 0 auto;
+  width: 100%;
+  max-width: 300px;
+  padding: 10px;
+  color: white;
+  background-color: red;
+  border-radius: 30px;
+  border: none;
+  cursor: pointer;
 }
+
 
 .resumo-img-popup {
   width: 40px;
@@ -43,140 +195,38 @@ dialog::backdrop {
   object-fit: cover;
   margin-right: 8px;
   vertical-align: middle;
+  border-radius: 6px;
 }
 
-.btnDel {
-  background-color: transparent;
-  border: none;
-  font-size: 1.5rem;
-  color: #dc3545;
-  cursor: pointer;
-  padding: 0;
-  margin-left: 1rem;
-  line-height: 1;
-  transition: color 0.2s ease;
-}
-
-.btnDel:hover {
-  color: #a71d2a;
-}
-
-.container{
-    display: flex;
-    gap: 10px;
-    padding-top: 50px;
-    
-}
-.left-side{
-    width: 50%;
-    background-color: aliceblue;
-    border-radius: 20px;
-    
-}
-.rigth-side{
-    width: 50%;
-    padding-left: 500px;
-    
-}
-
-.item_carrinho{
-    display: flex;
+/* 📱 Responsividade */
+@media screen and (max-width: 768px) {
+  .container {
     flex-direction: column;
-    width: 200px;
-    & button{
-        border-radius: 20px;
-        margin-top: -10px;
-        width: 120px;
-         align-self: center;
-        & img{
-            height: 20px;
-            align-self: center;
-            justify-self: center;
-            margin: 3px;
-        }
-       
-        
-    };
-    & img{
-        border-radius: 5px;
-        height: 250px;
-        
-    }
-    & small{
-        color: #B4AAA7;
-    }
-    & p{
-        color: #372623
-    }
-    & span p{
-        color: #B06F5D;
-    }
-}
+  }
 
-.cart-view{
-    display: flex;
-    flex-wrap: wrap;
-    flex-direction: row;
-    gap: 10px;
-
-    
-
-}
-.carrinho{
-    width: 350px;
-    min-height: 200px;
-    height: auto;
-    border-radius: 10px;
-    background-color: aliceblue;
+  .left-side,
+  .rigth-side {
+    width: 100%;
     padding: 10px;
-}
+  }
 
-.imagem{
-    width: 150px;
-    height: 150px;
-    object-fit: cover;
-}
+  .item_carrinho {
+    width: 100%;
+    max-width: 300px;
+    margin: 0 auto;
+  }
 
-.item{
-    display: flex;
-    flex-direction: row;
-    justify-content: space-between;
-    border-bottom: solid rgba(128, 128, 128, 0.055);
-    
-    & .btnDel{
-        align-self: center;
-        margin-bottom: 15px;
-    };
-    & .nomeProduto{
-        color: red;
-    };
-    & .qtdProd{
-        color: red;
-    };
-    & .precoUni{
-        color: #6e6e6e;
-    };
-    & .precoSom{
-        color: brown;
-    }
-    
-}
-.finalCar {
-    display: flex;
-    justify-content: space-between;
-    margin-top: 10px;
-    & p{
-        margin-top: 5px;
-    }
-    & h3{
-        font-weight: 755;
-    }
-}
-#btnConfirm{
-    background-color: red;
-    border-radius: 20px;
-    padding: 10px;
-    width: 320px;
-    color: white;
-    border: none;
+  .carrinho {
+    width: 100%;
+  }
+
+  #btnConfirm,
+  dialog button {
+    width: 100%;
+  }
+
+  dialog {
+    max-width: 95%;
+    padding: 1.5rem;
+  }
 }
